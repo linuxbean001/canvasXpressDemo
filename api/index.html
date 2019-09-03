@@ -1,0 +1,86 @@
+<html>
+  <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/canvasXpress/24.8.1/canvasXpress.css" integrity="sha256-K1xf4kIwHdOMFBHQk71E5/iValAXj07RBdCzII3YuV0=" crossorigin="anonymous" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasXpress/24.8.1/canvasXpress.min.js" integrity="sha256-QBEAsfhl2Z7g/T/tgqDnW2pCNzfiYSpzJZxecoZ5XHs=" crossorigin="anonymous"></script>
+    <!-- Page Script -->
+    <script>
+      window.onload = function() {
+        var cx = new CanvasXpress("cX", 
+        	 {
+        	    "y" : {
+        	  	  "vars" : ["Variable1"],
+        	  	  "smps" : ["Sample1", "Sample2", "Sample3"],
+        		  "data" : [[33, 44, 55]]
+                }
+        	 },
+             {
+                "graphOrientation": "vertical",
+                "graphType": "Bar",
+                "title": "Simple Bar graph"
+             }
+        );
+
+        var cX = new CanvasXpress(
+            {
+            renderTo: "canvasId",
+            data: "https://raw.githubusercontent.com/neuhausi/Rdatasets/master/csv/datasets/ToothGrowth.csv",
+            config: {
+                title: "Tooth Growth",
+                smpLabelRotate: 90,
+                graphType: "Boxplot",
+                graphOrientation: "vertical",
+                transposeData: true,
+                asVariableFactors: [ "dose" ],
+                stringSampleFactors: [ "dose" ],
+                groupingFactors: [ "dose" ]
+            },
+            events: false
+            }
+            );
+
+
+            var cX = new CanvasXpress(
+                {
+                renderTo: "canvasId2",
+                data: "https://canvasxpress.org/images/ex/Ex-bar-1.png",
+                config: false,
+                events: false
+                }
+                );
+       
+
+                var cX = new CanvasXpress(
+                {
+                renderTo: "canvasId3",
+                data: "https://raw.githubusercontent.com/neuhausi/Rdatasets/master/json/datasets/AirPassengers.json",
+                config: false,
+                events: false
+                }
+                );   
+    }
+    </script>
+    <style>
+    .box {
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 50px;
+}
+    </style>
+  </head>
+  <body>
+    <div>
+     <div class="box">
+      <canvas id='canvasId' width='400' height='400' data-responsive='true' data-aspectRatio='1:1'></canvas>
+     </div>
+     <div class="box">
+      <canvas id='canvasId2' width='400' height='400' data-responsive='true' data-aspectRatio='1:1'></canvas>
+     </div> 
+     <div class="box">
+      <canvas id='canvasId3' width='400' height='400' data-responsive='true' data-aspectRatio='1:1'></canvas>
+    </div>
+    <div class="box">  
+      <canvas id='cX' width='400' height='400' data-responsive='true' data-aspectRatio='1:1'></canvas>
+    </div>
+    </div>
+  </body>
+</html>
